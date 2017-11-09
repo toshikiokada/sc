@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>決済金額照会画面 - Sコイン オペレータ管理画面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    	<link href="../assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="../assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="../assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen" />
+
+  <link href="../pages/css/pages-icons.css" rel="stylesheet" type="text/css">
+  <link class="main-stylesheet" href="../pages/css/themes/light.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/plugins/jquery-datatable/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/plugins/datatables-responsive/css/datatables.responsive.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="../pages/css/pages-icons.css" rel="stylesheet" type="text/css">
+  <link class="main-stylesheet" href="../pages/css/themes/light.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="fixed-header menu-pin"> 
+    <!-- BEGIN SIDEBAR -->
+        <!-- BEGIN SIDEBPANEL-->
+    <nav class="page-sidebar" data-pages="sidebar">
+      <!-- BEGIN SIDEBAR MENU TOP TRAY CONTENT-->
+      <div class="sidebar-overlay-slide from-top" id="appMenu">
+        
+      </div>
+      <!-- END SIDEBAR MENU TOP TRAY CONTENT-->
+      <!-- BEGIN SIDEBAR MENU HEADER-->
+      <div class="sidebar-header">
+        <img src="../assets/img/s_logo_blue.png" alt="s_logo" class="brand" data-src="../assets/img/s_logo_blue.png" data-src-retina="../assets/img/s_logo_blue_2x.png" width="160" height="20">
+      </div>
+      <!-- END SIDEBAR MENU HEADER-->
+      <!-- START SIDEBAR MENU -->
+      <div class="sidebar-menu">
+        <!-- BEGIN SIDEBAR MENU ITEMS-->
+        <ul class="menu-items">
+          <li class="m-t-30">
+            <a href="billing.html">
+              <span class="title">請求金額</span>
+            </a>
+            <span class="icon-thumbnail "><i data-feather="bar-chart-2"></i></span>
+          </li>
+          <li class="">
+            <a href="unsettled.html">
+              <span class="title">未精算金額</span>
+            </a>
+            <span class="icon-thumbnail "><i data-feather="flag"></i></span>
+          </li>
+          <li class="open active">
+            <a href="#">
+              <span class="title">決済金額</span>
+            </a>
+            <span class="icon-thumbnail "><i data-feather="credit-card"></i></span>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <!-- END SIDEBAR MENU -->
+    </nav>
+    <!-- END SIDEBAR -->
+    <!-- END SIDEBAR -->
+    <!-- START PAGE-CONTAINER -->
+    <div class="page-container">
+      <!-- START PAGE HEADER WRAPPER -->
+      <!-- START HEADER -->
+      <div class="header ">
+        <!-- START MOBILE SIDEBAR TOGGLE -->
+        <a href="#" class="btn-link toggle-sidebar hidden-lg-up pg pg-menu" data-toggle="sidebar">
+        </a>
+        <!-- END MOBILE SIDEBAR TOGGLE -->
+        <div class="">
+          <div class="brand inline">
+            <img src="../assets/img/s_logo_blue.png" alt="s_logo" data-src="../assets/img/s_logo_blue.png" data-src-retina="../assets/img/s_logo_blue_2x.png" width="160 height="20">
+          </div>
+          <a href="#" class="btn btn-link text-primary m-l-20 hidden-md-down">SBI オペレータ</a>
+        </div>
+        <div class="d-flex align-items-center">
+        
+          <!-- START User Info-->
+          <div class="pull-left p-r-10 fs-14 font-heading hidden-md-down m-l-20">
+            <span class="semi-bold">江洲</span> <span class="text-master">狐印</span>
+          </div>
+          <div class="dropdown pull-right">
+            <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="thumbnail-wrapper d32 circular inline">
+              <img src="../assets/img/profiles/avatar.jpg" alt="" data-src="../assets/img/profiles/avatar.jpg" data-src-retina="../assets/img/profiles/avatar_small2x.jpg" width="32" height="32">
+              </span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
+
+              <a href="login.html" class="clearfix bg-master-lighter dropdown-item">
+                <span class="pull-left">ログアウト</span>
+                <span class="pull-right"><i class="pg-power"></i></span>
+              </a>
+            </div>
+          </div>
+          <!-- END User Info-->
+          
+        </div>
+      </div>
+      <!-- END HEADER -->
+      <!-- END PAGE HEADER WRAPPER -->
+      <!-- START PAGE CONTENT WRAPPER -->
+      <div class="page-content-wrapper">
+        <!-- START PAGE CONTENT -->
+        <div class="content">
+          <!-- START JUMBOTRON -->
+          
+          <!-- END JUMBOTRON -->
+          <!-- START CONTAINER FLUID -->
+          <div class=" container-fluid   container-fixed-lg bg-white">
+            <!-- START card -->
+            <div class="card card-transparent">
+              <div class="card-header ">
+                <div class="card-title">決済金額照会画面
+                </div>
+                <div class="pull-right">
+                  <div class="row">
+                  
+                  <div class="col-md-7 sm-m-t-10">
+                              <input type="text" placeholder="加盟店名 / コード" class="form-control">
+                  </div>
+                      <button type="button" class="btn btn-primary btn-cons btn-animated from-top fa fa-search">
+                        <span>検索</span>
+                      </button>
+
+                  </div>
+                  
+                </div>
+                
+                
+                <div class="clearfix"></div>
+              </div>
+              <div class="card-block">
+                <div class="table-responsive">
+                  <table class="table table-hover" id="basicTable">
+                    <thead>
+                      <tr>
+                        <!-- NOTE * : Inline Style Width For Table Cell is Required as it may differ from user to user
+                        Comman Practice Followed
+                        -->
+                        <th style="width:10%">加盟店コード</th>
+                        <th style="width:10%">加盟店名</th>
+                        <th style="width:10%">担当者名</th>
+                        <th style="width:10%">決済年月</th>
+                        <th style="width:10%">決済金額</th>
+                        <th style="width:10%">決済手数料</th>
+                        <th style="width:10%">精算済金額</th>
+                        <th style="width:10%">振込日</th>
+                        <th style="width:10%">振込先口座</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="v-align-middle ">
+                          654321
+                        </td>
+                        <td class="v-align-middle">
+                          松屋1
+                        </td>
+                        <td class="v-align-middle">
+                          山田太郎
+                        </td>
+                        <td class="v-align-middle">
+                          2017/7
+                        </td>
+                        <td class="v-align-middle">
+                          ¥120,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥20,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥100,000
+                        </td>
+                        <td class="v-align-middle">
+                          2017/8/25
+                        </td>
+                        <td class="v-align-middle">
+                          123456
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="v-align-middle ">
+                          654322
+                        </td>
+                        <td class="v-align-middle">
+                          すき家
+                        </td>
+                        <td class="v-align-middle">
+                          山田太郎
+                        </td>
+                        <td class="v-align-middle">
+                          2017/8
+                        </td>
+                        <td class="v-align-middle">
+                          ¥225,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥25,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥200,000 
+                        </td>
+                        <td class="v-align-middle">
+                          2017/9/25
+                        </td>
+                        <td class="v-align-middle">
+                          123456
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="v-align-middle ">
+                          654323
+                        </td>
+                        <td class="v-align-middle">
+                          吉野家
+                        </td>
+                        <td class="v-align-middle">
+                          山田太郎
+                        </td>
+                        <td class="v-align-middle">
+                          2017/9
+                        </td>
+                        <td class="v-align-middle">
+                          ¥335,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥35,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥300,000 
+                        </td>
+                        <td class="v-align-middle">
+                          2017/10/25
+                        </td>
+                        <td class="v-align-middle">
+                          123456
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="v-align-middle ">
+                          654324
+                        </td>
+                        <td class="v-align-middle">
+                          佐々木屋
+                        </td>
+                        <td class="v-align-middle">
+                          山田太郎
+                        </td>
+                        <td class="v-align-middle">
+                          2017/10
+                        </td>
+                        <td class="v-align-middle">
+                          ¥445,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥45,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥400,000 
+                        </td>
+                        <td class="v-align-middle">
+                          2017/11/25
+                        </td>
+                        <td class="v-align-middle">
+                          123456
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="v-align-middle ">
+                          654325
+                        </td>
+                        <td class="v-align-middle">
+                          大戸屋
+                        </td>
+                        <td class="v-align-middle">
+                          山田太郎
+                        </td>
+                        <td class="v-align-middle">
+                          2017/11
+                        </td>
+                        <td class="v-align-middle">
+                          ¥555,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥55,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥500.000 
+                        </td>
+                        <td class="v-align-middle">
+                          2017/12/25
+                        </td>
+                        <td class="v-align-middle">
+                          123456
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- END card -->
+
+          <!-- Modal -->
+          <div class="modal fade slide-up disable-scroll" id="modalSlideUp" tabindex="-1" role="dialog" aria-hidden="false">
+            <div class="modal-dialog ">
+              <div class="modal-content-wrapper">
+                <div class="modal-content">
+                  <div class="modal-header clearfix text-left">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
+                    </button>
+                    <h5>精算済金額登録</h5>
+                    <p class="p-b-1">加盟店コード : 654321</p>
+                    <p class="p-b-1">加盟店名 : 松屋1</p>
+                    <p class="p-b-1">振込予定日 : 2017/8/25</p>
+                  </div>
+                  <div class="modal-body">
+                    <form role="form">
+
+                      <div class="form-group form-group-default input-group">
+                        <div class="form-input-group">
+                          <label>精算済み金額</label>
+                          <input type="text" class="form-control">
+                        </div>
+                        <div class="input-group-addon">
+                          円
+                        </div>
+                      </div>
+
+                      
+                    </form>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div class="p-t-20 clearfix p-l-10 p-r-10">
+                          <div class="pull-left">
+                            <p class="bold font-montserrat text-uppercase">未精算金額</p>
+                          </div>
+                          <div class="pull-right">
+                            <p class="bold font-montserrat text-uppercase">¥10,000</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 m-t-10 sm-m-t-10">
+                        <button type="button" class="btn btn-primary btn-block m-t-5" data-target="#modalFillIn" data-toggle="modal" id="btnFillSizeToggler2">登録</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.modal-content -->
+              
+              <!-- Modal -->
+          <div class="modal fade fill-in" id="modalFillIn" tabindex="-1" role="dialog" aria-hidden="true">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <i class="pg-close"></i>
+            </button>
+            <div class="modal-dialog ">
+              <div class="modal-content">
+                
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-lg-9 ">
+                       <h5 class="text-left p-b-5"><span class="semi-bold">精算済金額登録が完了しました</h5>
+                    </div>
+                    <div class="col-lg-3 no-padding sm-m-t-10 sm-text-center">
+                      <button type="button" class="btn btn-primary btn-lg btn-large fs-15">完了</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+              <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+          </div>
+
+            </div>
+          </div>
+
+
+
+
+          </div>
+          <!-- END CONTAINER FLUID -->
+        </div>
+        <!-- END PAGE CONTENT -->
+        <!-- START FOOTER -->
+        <div class="container-fluid container-fixed-lg footer">
+          <div class="copyright sm-text-center">
+            <p class="small no-margin pull-left sm-pull-reset">
+              <span class="hint-text">Copyright © </span>
+              <span class="font-montserrat">SBI Holdings</span>.
+              <span class="hint-text">All rights reserved.</span>
+                        </span>
+            </p>
+            <p class="small no-margin pull-right sm-pull-reset">
+              <span class="hint-text">画面ID C036</span>
+            </p>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <!-- END FOOTER -->
+      </div>
+      <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+    <!-- END PAGE CONTAINER -->
+   
+    
+    <!-- BEGIN VENDOR JS -->
+    <script src="../assets/plugins/feather-icons/feather.min.js" type="text/javascript"></script>
+        <!-- BEGIN VENDOR JS -->
+    <script src="../assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/modernizr.custom.js" type="text/javascript"></script>
+    <script src="../assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/tether/js/tether.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/jquery/jquery-easy.js" type="text/javascript"></script>
+    <script src="../assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/jquery-bez/jquery.bez.min.js"></script>
+    <script src="../assets/plugins/jquery-ios-list/jquery.ioslist.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/plugins/jquery-actual/jquery.actual.min.js"></script>
+    <script src="../assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <script type="text/javascript" src="../assets/plugins/select2/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/classie/classie.js"></script>
+    <script src="../assets/plugins/switchery/js/switchery.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/jquery-datatable/media/js/dataTables.bootstrap.js" type="text/javascript"></script>
+    <script src="../assets/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../assets/plugins/datatables-responsive/js/datatables.responsive.js"></script>
+    <script type="text/javascript" src="../assets/plugins/datatables-responsive/js/lodash.min.js"></script>
+    <!-- END VENDOR JS -->
+    <!-- BEGIN CORE TEMPLATE JS -->
+    <script src="../pages/js/pages.js" type="text/javascript"></script>
+    <!-- END CORE TEMPLATE JS -->
+    <!-- BEGIN PAGE LEVEL JS -->
+    <script src="../assets/js/datatables.js" type="text/javascript"></script>
+    <script src="../assets/js/demo.js" type="text/javascript"></script>
+    <script src="../assets/js/scripts_alt.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL JS -->
+  </body>
+</html>
