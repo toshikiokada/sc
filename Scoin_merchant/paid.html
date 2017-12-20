@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <title>未精算金額照会画面 - Sコイン 加盟店管理画面</title>
+    <title>精算済み金額照会画面 - Sコイン 加盟店管理画面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
@@ -49,13 +49,13 @@
             </a>
             <span class="icon-thumbnail "><i data-feather="bar-chart-2"></i></span>
           </li>
-          <li class="open active">
+          <li class="">
             <a href="unsettled.html">
               <span class="title">未精算金額</span>
             </a>
             <span class="icon-thumbnail "><i data-feather="flag"></i></span>
           </li>
-          <li class="">
+          <li class="open active">
             <a href="paid.html">
               <span class="title">精算済金額</span>
             </a>
@@ -120,16 +120,33 @@
           <div class=" container-fluid   container-fixed-lg bg-white">
             <!-- START card -->
             <div class="card card-transparent">
-              <div class="card-header   d-flex justify-content-between">
-                <div class="card-title">未精算金額照会画面
+              <div class="card-header ">
+                <div class="card-title">精算済金額照会画面
                 </div>
-              <div class="export-options-container"></div>
+                <div class="pull-right">
+                  <div class="row">
+                  
+
+                 
+                    <div class="col-md-12 pull-right input-daterange input-group" id="datepicker-range">
+                      <div class="hint-text v-align-middle"><small>精算日時指定検索</small></div>　
+                      <input type="text" class="input-sm form-control" name="start">
+                      <div class="input-group-addon">~</div>
+                      <input type="text" class="input-sm form-control" name="end">
+                   </div>
+
+                  </div>
+
+                  
+                  
+                </div>
                 
                 
-                <!-- <div class="clearfix"></div> -->
+                <div class="clearfix"></div>
               </div>
               <div class="card-block">
-                  <table class="table table-striped" id="tableWithExportOptions">
+                <div class="table-responsive">
+                  <table class="table " id="tableWithExportOptions">
                     <thead>
                       <tr>
                         <!-- NOTE * : Inline Style Width For Table Cell is Required as it may differ from user to user
@@ -137,135 +154,149 @@
                         -->
                         <th>最終明細日時</th>
                         <th>利用金額</th>
-                        <th>売却後金額</th>
                         <th>手数料</th>
                         <th>消費税</th>
-                        <th>未精算金額</th>
+                        <th>精算済金額</th>
+                        <th>精算年月日</th>
+                        <th>精算トランザクションID</th>
+                        <th>精算登録日時</th>
+                        
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="v-align-middle">
-                          2017/8/25
+                        <td class="v-align-middle ">
+                          2017/8/27
                         </td>
                         <td class="v-align-middle">
-                          100コイン
-                        </td>
-                        <td class="v-align-middle">
-                          ¥10,000
+                          ¥100,000
                         </td>
                         <td class="v-align-middle">
                           ¥100
                         </td>
                         <td class="v-align-middle">
                           ¥8
-                        </td>
+                        </td>                      
                         <td class="v-align-middle">
-                          ¥10,000
+                          ¥100,000
+                        </td>
+                        <td class="v-align-middle ">
+                          2017/8/27
+                        </td>
+                        <td class="v-align-middle ">
+                          T56789034
+                        </td>
+                        <td class="v-align-middle ">
+                          2017/8/27
                         </td>
                       </tr>
                       <tr>
-                        <td class="v-align-middle">
-                          2017/8/25
+                        <td class="v-align-middle ">
+                          2017/8/27
                         </td>
                         <td class="v-align-middle">
-                          100コイン
-                        </td>
-                        <td class="v-align-middle">
-                          ¥10,000
+                          ¥100,000
                         </td>
                         <td class="v-align-middle">
                           ¥100
                         </td>
                         <td class="v-align-middle">
                           ¥8
-                        </td>
+                        </td>                      
                         <td class="v-align-middle">
-                          ¥10,000
+                          ¥100,000
+                        </td>
+                        <td class="v-align-middle ">
+                          2017/8/27
+                        </td>
+                        <td class="v-align-middle ">
+                          T56789034
+                        </td>
+                        <td class="v-align-middle ">
+                          2017/8/27
                         </td>
                       </tr>
                       <tr>
-                        <td class="v-align-middle">
-                          2017/8/25
+                        <td class="v-align-middle ">
+                          2017/8/27
                         </td>
                         <td class="v-align-middle">
-                          100コイン
-                        </td>
-                        <td class="v-align-middle">
-                          ¥10,000
+                          ¥100,000
                         </td>
                         <td class="v-align-middle">
                           ¥100
                         </td>
                         <td class="v-align-middle">
                           ¥8
-                        </td>
+                        </td>                      
                         <td class="v-align-middle">
-                          ¥10,000
+                          ¥100,000
+                        </td>
+                        <td class="v-align-middle ">
+                          2017/8/27
+                        </td>
+                        <td class="v-align-middle ">
+                          T56789034
+                        </td>
+                        <td class="v-align-middle ">
+                          2017/8/27
                         </td>
                       </tr>
                       <tr>
-                        <td class="v-align-middle">
-                          2017/8/25
+                        <td class="v-align-middle ">
+                          2017/8/27
                         </td>
                         <td class="v-align-middle">
-                          100コイン
-                        </td>
-                        <td class="v-align-middle">
-                          ¥10,000
+                          ¥100,000
                         </td>
                         <td class="v-align-middle">
                           ¥100
                         </td>
                         <td class="v-align-middle">
                           ¥8
-                        </td>
+                        </td>                      
                         <td class="v-align-middle">
-                          ¥10,000
+                          ¥100,000
+                        </td>
+                        <td class="v-align-middle ">
+                          2017/8/27
+                        </td>
+                        <td class="v-align-middle ">
+                          T56789034
+                        </td>
+                        <td class="v-align-middle ">
+                          2017/8/27
                         </td>
                       </tr>
                       <tr>
-                        <td class="v-align-middle">
-                          2017/8/25
+                        <td class="v-align-middle ">
+                          2017/8/27
                         </td>
                         <td class="v-align-middle">
-                          100コイン
-                        </td>
-                        <td class="v-align-middle">
-                          ¥10,000
+                          ¥100,000
                         </td>
                         <td class="v-align-middle">
                           ¥100
                         </td>
                         <td class="v-align-middle">
                           ¥8
-                        </td>
+                        </td>                      
                         <td class="v-align-middle">
-                          ¥10,000
+                          ¥100,000
                         </td>
-                      </tr>
-                      <tr>
-                        <td class="v-align-middle">
-                          2017/8/25
+                        <td class="v-align-middle ">
+                          2017/8/27
                         </td>
-                        <td class="v-align-middle">
-                          100コイン
+                        <td class="v-align-middle ">
+                          T56789034
                         </td>
-                        <td class="v-align-middle">
-                          ¥10,000
-                        </td>
-                        <td class="v-align-middle">
-                          ¥100
-                        </td>
-                        <td class="v-align-middle">
-                          ¥8
-                        </td>
-                        <td class="v-align-middle">
-                          ¥10,000
+                        <td class="v-align-middle ">
+                          2017/8/27
                         </td>
                       </tr>
                     </tbody>
                   </table>
+                </div>
               </div>
             </div>
             <!-- END card -->

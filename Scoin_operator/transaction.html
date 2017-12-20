@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <title>未精算金額照会画面 - Sコイン 加盟店管理画面</title>
+    <title>取引履歴一覧画面 - Sコイン オペレータ管理画面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
@@ -36,7 +36,7 @@
       <!-- END SIDEBAR MENU TOP TRAY CONTENT-->
       <!-- BEGIN SIDEBAR MENU HEADER-->
       <div class="sidebar-header">
-        <img src="../assets/img/s_logo_blue.png" alt="logo" class="brand" data-src="../assets/img/s_logo_blue.png" data-src-retina="../assets/img/s_logo_blue_2x.png" width="160" height="20">
+        <img src="../assets/img/s_logo_blue.png" alt="s_logo" class="brand" data-src="../assets/img/s_logo_blue.png" data-src-retina="../assets/img/s_logo_blue_2x.png" width="160" height="20">
       </div>
       <!-- END SIDEBAR MENU HEADER-->
       <!-- START SIDEBAR MENU -->
@@ -44,12 +44,12 @@
         <!-- BEGIN SIDEBAR MENU ITEMS-->
         <ul class="menu-items">
           <li class="m-t-30">
-            <a href="paymenthistory.html">
-              <span class="title">決済履歴</span>
+            <a href="billing.html">
+              <span class="title">請求金額</span>
             </a>
             <span class="icon-thumbnail "><i data-feather="bar-chart-2"></i></span>
           </li>
-          <li class="open active">
+          <li class="">
             <a href="unsettled.html">
               <span class="title">未精算金額</span>
             </a>
@@ -59,9 +59,14 @@
             <a href="paid.html">
               <span class="title">精算済金額</span>
             </a>
+            <span class="icon-thumbnail "><i data-feather="credit-card"></i></span>
+          </li>
+          <li class="open active">
+            <a href="transaction.html">
+              <span class="title">取引履歴</span>
+            </a>
             <span class="icon-thumbnail "><i data-feather="list"></i></span>
           </li>
-          
         </ul>
         <div class="clearfix"></div>
       </div>
@@ -80,14 +85,14 @@
         <!-- END MOBILE SIDEBAR TOGGLE -->
         <div class="">
           <div class="brand inline">
-            <img src="../assets/img/s_logo_blue.png" alt="logo" data-src="../assets/img/s_logo_blue.png" data-src-retina="../assets/img/s_logo_blue_2x.png" width="160 height="20">
+            <img src="../assets/img/s_logo_blue.png" alt="s_logo" data-src="../assets/img/s_logo_blue.png" data-src-retina="../assets/img/s_logo_blue_2x.png" width="160 height="20">
           </div>
         </div>
         <div class="d-flex align-items-center">
         
           <!-- START User Info-->
           <div class="pull-left p-r-10 fs-14 font-heading hidden-md-down m-l-20">
-            <span class="semi-bold">佐々木</span> <span class="text-master">小五郎</span>
+            <span class="semi-bold">江洲</span> <span class="text-master">狐印</span>
           </div>
           <div class="dropdown pull-right">
             <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -120,157 +125,248 @@
           <div class=" container-fluid   container-fixed-lg bg-white">
             <!-- START card -->
             <div class="card card-transparent">
-              <div class="card-header   d-flex justify-content-between">
-                <div class="card-title">未精算金額照会画面
+              <div class="card-header ">
+                <div class="card-title">取引履歴一覧画面
                 </div>
-              <div class="export-options-container"></div>
+                <div class="pull-right">
+                  <div class="row">
+                  
+
+                 
+                    <div class="col-md-12 pull-right input-daterange input-group" id="datepicker-range">
+                      <div class="hint-text v-align-middle"><small>取引日時指定検索</small></div>　
+                      <input type="text" class="input-sm form-control" name="start">
+                      <div class="input-group-addon">~</div>
+                      <input type="text" class="input-sm form-control" name="end">
+                   </div>
+
+                  </div>
+
+                  
+                  
+                </div>
                 
                 
-                <!-- <div class="clearfix"></div> -->
+                <div class="clearfix"></div>
               </div>
               <div class="card-block">
-                  <table class="table table-striped" id="tableWithExportOptions">
+                <div class="table-responsive">
+                  <table class="table table-hover" id="tableWithExportOptions">
                     <thead>
                       <tr>
                         <!-- NOTE * : Inline Style Width For Table Cell is Required as it may differ from user to user
                         Comman Practice Followed
                         -->
-                        <th>最終明細日時</th>
-                        <th>利用金額</th>
-                        <th>売却後金額</th>
-                        <th>手数料</th>
-                        <th>消費税</th>
-                        <th>未精算金額</th>
+                        <th>取引日時</th>
+                        <th>ユーザーID</th>
+                        <th>相手先ユーザーID</th>
+                        <th>コイン取引種別</th>
+                        <th>コイン数</th>
+                        <th>トランザクションID</th>
+                        <th>トランザクションＩＤ（共通）</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="v-align-middle">
+                        <td class="v-align-middle ">
                           2017/8/25
+                        </td>
+                        <td class="v-align-middle">
+                          U654321
+                        </td>
+                        <td class="v-align-middle">
+                          UU123452
+                        </td>
+                        <td class="v-align-middle">
+                          購入
                         </td>
                         <td class="v-align-middle">
                           100コイン
                         </td>
                         <td class="v-align-middle">
-                          ¥10,000
+                          T2564782
                         </td>
                         <td class="v-align-middle">
-                          ¥100
-                        </td>
-                        <td class="v-align-middle">
-                          ¥8
-                        </td>
-                        <td class="v-align-middle">
-                          ¥10,000
+                          TT5367890
                         </td>
                       </tr>
                       <tr>
-                        <td class="v-align-middle">
+                        <td class="v-align-middle ">
                           2017/8/25
+                        </td>
+                        <td class="v-align-middle">
+                          U654321
+                        </td>
+                        <td class="v-align-middle">
+                          UU123452
+                        </td>
+                        <td class="v-align-middle">
+                          売却
                         </td>
                         <td class="v-align-middle">
                           100コイン
                         </td>
                         <td class="v-align-middle">
-                          ¥10,000
+                          T2564782
                         </td>
                         <td class="v-align-middle">
-                          ¥100
-                        </td>
-                        <td class="v-align-middle">
-                          ¥8
-                        </td>
-                        <td class="v-align-middle">
-                          ¥10,000
+                          TT5367890
                         </td>
                       </tr>
                       <tr>
-                        <td class="v-align-middle">
+                        <td class="v-align-middle ">
                           2017/8/25
+                        </td>
+                        <td class="v-align-middle">
+                          U654321
+                        </td>
+                        <td class="v-align-middle">
+                          UU123452
+                        </td>
+                        <td class="v-align-middle">
+                          使用
                         </td>
                         <td class="v-align-middle">
                           100コイン
                         </td>
                         <td class="v-align-middle">
-                          ¥10,000
+                          T2564782
                         </td>
                         <td class="v-align-middle">
-                          ¥100
-                        </td>
-                        <td class="v-align-middle">
-                          ¥8
-                        </td>
-                        <td class="v-align-middle">
-                          ¥10,000
+                          TT5367890
                         </td>
                       </tr>
                       <tr>
-                        <td class="v-align-middle">
+                        <td class="v-align-middle ">
                           2017/8/25
+                        </td>
+                        <td class="v-align-middle">
+                          U654321
+                        </td>
+                        <td class="v-align-middle">
+                          UU123452
+                        </td>
+                        <td class="v-align-middle">
+                          精算処理
                         </td>
                         <td class="v-align-middle">
                           100コイン
                         </td>
                         <td class="v-align-middle">
-                          ¥10,000
+                          T2564782
                         </td>
                         <td class="v-align-middle">
-                          ¥100
-                        </td>
-                        <td class="v-align-middle">
-                          ¥8
-                        </td>
-                        <td class="v-align-middle">
-                          ¥10,000
+                          TT5367890
                         </td>
                       </tr>
                       <tr>
-                        <td class="v-align-middle">
+                        <td class="v-align-middle ">
                           2017/8/25
+                        </td>
+                        <td class="v-align-middle">
+                          U654321
+                        </td>
+                        <td class="v-align-middle">
+                          UU123452
+                        </td>
+                        <td class="v-align-middle">
+                          精算売却
                         </td>
                         <td class="v-align-middle">
                           100コイン
                         </td>
                         <td class="v-align-middle">
-                          ¥10,000
+                          T2564782
                         </td>
                         <td class="v-align-middle">
-                          ¥100
-                        </td>
-                        <td class="v-align-middle">
-                          ¥8
-                        </td>
-                        <td class="v-align-middle">
-                          ¥10,000
+                          TT5367890
                         </td>
                       </tr>
-                      <tr>
-                        <td class="v-align-middle">
-                          2017/8/25
-                        </td>
-                        <td class="v-align-middle">
-                          100コイン
-                        </td>
-                        <td class="v-align-middle">
-                          ¥10,000
-                        </td>
-                        <td class="v-align-middle">
-                          ¥100
-                        </td>
-                        <td class="v-align-middle">
-                          ¥8
-                        </td>
-                        <td class="v-align-middle">
-                          ¥10,000
-                        </td>
-                      </tr>
+
                     </tbody>
                   </table>
+                </div>
               </div>
             </div>
             <!-- END card -->
 
-         
+          <!-- Modal -->
+          <div class="modal fade slide-up disable-scroll" id="modalSlideUp" tabindex="-1" role="dialog" aria-hidden="false">
+            <div class="modal-dialog ">
+              <div class="modal-content-wrapper">
+                <div class="modal-content">
+                  <div class="modal-header clearfix text-left">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
+                    </button>
+                    <h5>精算済金額登録</h5>
+                    <p class="p-b-1">加盟店コード : 654321</p>
+                    <p class="p-b-1">加盟店名 : 松屋1</p>
+                    <p class="p-b-1">振込予定日 : 2017/8/25</p>
+                  </div>
+                  <div class="modal-body">
+                    <form role="form">
+
+                      <div class="form-group form-group-default input-group">
+                        <div class="form-input-group">
+                          <label>精算済み金額</label>
+                          <input type="text" class="form-control">
+                        </div>
+                        <div class="input-group-addon">
+                          円
+                        </div>
+                      </div>
+
+                      
+                    </form>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div class="p-t-20 clearfix p-l-10 p-r-10">
+                          <div class="pull-left">
+                            <p class="bold font-montserrat text-uppercase">未精算金額</p>
+                          </div>
+                          <div class="pull-right">
+                            <p class="bold font-montserrat text-uppercase">¥10,000</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 m-t-10 sm-m-t-10">
+                        <button type="button" class="btn btn-primary btn-block m-t-5" data-target="#modalFillIn" data-toggle="modal" id="btnFillSizeToggler2">登録</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.modal-content -->
+              
+              <!-- Modal -->
+          <div class="modal fade fill-in" id="modalFillIn" tabindex="-1" role="dialog" aria-hidden="true">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <i class="pg-close"></i>
+            </button>
+            <div class="modal-dialog ">
+              <div class="modal-content">
+                
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-lg-9 ">
+                       <h5 class="text-left p-b-5"><span class="semi-bold">精算済金額登録が完了しました</h5>
+                    </div>
+                    <div class="col-lg-3 no-padding sm-m-t-10 sm-text-center">
+                      <button type="button" class="btn btn-primary btn-lg btn-large fs-15">完了</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+              <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+          </div>
+
+            </div>
+          </div>
+
 
 
 
@@ -288,7 +384,7 @@
                         </span>
             </p>
             <p class="small no-margin pull-right sm-pull-reset">
-              <span class="hint-text">画面ID B004</span>
+              <span class="hint-text">画面ID C036</span>
             </p>
             <div class="clearfix"></div>
           </div>

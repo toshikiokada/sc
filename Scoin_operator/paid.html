@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <title>決済金額照会画面 - Sコイン オペレータ管理画面</title>
+    <title>精算済金額照会画面 - Sコイン オペレータ管理画面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
@@ -56,10 +56,16 @@
             <span class="icon-thumbnail "><i data-feather="flag"></i></span>
           </li>
           <li class="open active">
-            <a href="#">
-              <span class="title">決済金額</span>
+            <a href="paid.html">
+              <span class="title">精算済金額</span>
             </a>
             <span class="icon-thumbnail "><i data-feather="credit-card"></i></span>
+          </li>
+          <li class="">
+            <a href="transaction.html">
+              <span class="title">取引履歴</span>
+            </a>
+            <span class="icon-thumbnail "><i data-feather="list"></i></span>
           </li>
         </ul>
         <div class="clearfix"></div>
@@ -81,7 +87,6 @@
           <div class="brand inline">
             <img src="../assets/img/s_logo_blue.png" alt="s_logo" data-src="../assets/img/s_logo_blue.png" data-src-retina="../assets/img/s_logo_blue_2x.png" width="160 height="20">
           </div>
-          <a href="#" class="btn btn-link text-primary m-l-20 hidden-md-down">SBI オペレータ</a>
         </div>
         <div class="d-flex align-items-center">
         
@@ -121,19 +126,23 @@
             <!-- START card -->
             <div class="card card-transparent">
               <div class="card-header ">
-                <div class="card-title">決済金額照会画面
+                <div class="card-title">精算済金額照会画面
                 </div>
                 <div class="pull-right">
                   <div class="row">
                   
-                  <div class="col-md-7 sm-m-t-10">
-                              <input type="text" placeholder="加盟店名 / コード" class="form-control">
-                  </div>
-                      <button type="button" class="btn btn-primary btn-cons btn-animated from-top fa fa-search">
-                        <span>検索</span>
-                      </button>
+
+                 
+                    <div class="col-md-12 pull-right input-daterange input-group" id="datepicker-range">
+                      <div class="hint-text v-align-middle"><small>精算日時指定検索</small></div>　
+                      <input type="text" class="input-sm form-control" name="start">
+                      <div class="input-group-addon">~</div>
+                      <input type="text" class="input-sm form-control" name="end">
+                   </div>
 
                   </div>
+
+                  
                   
                 </div>
                 
@@ -142,21 +151,22 @@
               </div>
               <div class="card-block">
                 <div class="table-responsive">
-                  <table class="table table-hover" id="basicTable">
+                  <table class="table table-hover" id="tableWithExportOptions">
                     <thead>
                       <tr>
                         <!-- NOTE * : Inline Style Width For Table Cell is Required as it may differ from user to user
                         Comman Practice Followed
                         -->
-                        <th style="width:10%">加盟店コード</th>
-                        <th style="width:10%">加盟店名</th>
-                        <th style="width:10%">担当者名</th>
-                        <th style="width:10%">決済年月</th>
-                        <th style="width:10%">決済金額</th>
-                        <th style="width:10%">決済手数料</th>
-                        <th style="width:10%">精算済金額</th>
-                        <th style="width:10%">振込日</th>
-                        <th style="width:10%">振込先口座</th>
+                        <th>加盟店コード</th>
+                        <th>加盟店名</th>
+                        <th>担当者名</th>
+                        <th>最終明細日時</th>
+                        <th>利用金額</th>
+                        <th>売却後金額</th>
+                        <th>手数料</th>
+                        <th>消費税</th>
+                        <th>精算金額</th>
+                        <th>精算年月日</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -171,22 +181,26 @@
                           山田太郎
                         </td>
                         <td class="v-align-middle">
-                          2017/7
-                        </td>
-                        <td class="v-align-middle">
-                          ¥120,000
-                        </td>
-                        <td class="v-align-middle">
-                          ¥20,000
-                        </td>
-                        <td class="v-align-middle">
-                          ¥100,000
-                        </td>
-                        <td class="v-align-middle">
                           2017/8/25
                         </td>
                         <td class="v-align-middle">
-                          123456
+                          100コイン
+                        </td>
+                        <td class="v-align-middle">
+                          ¥10,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥100
+                        </td>
+                        <td class="v-align-middle">
+                          ¥8
+                        </td>
+                        <td class="v-align-middle">
+                          ¥10,000
+                        </td>
+                        
+                        <td class="v-align-middle">
+                          2017/8/25
                         </td>
                       </tr>
                       <tr>
@@ -196,26 +210,32 @@
                         <td class="v-align-middle">
                           すき家
                         </td>
+                      
                         <td class="v-align-middle">
                           山田太郎
-                        </td>
-                        <td class="v-align-middle">
-                          2017/8
-                        </td>
-                        <td class="v-align-middle">
-                          ¥225,000
-                        </td>
-                        <td class="v-align-middle">
-                          ¥25,000
-                        </td>
-                        <td class="v-align-middle">
-                          ¥200,000 
                         </td>
                         <td class="v-align-middle">
                           2017/9/25
                         </td>
                         <td class="v-align-middle">
-                          123456
+                          200コイン
+                        </td>
+                        <td class="v-align-middle">
+                          ¥200,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥200
+                        </td>
+                        <td class="v-align-middle">
+                          ¥16
+                        </td>
+                        <td class="v-align-middle">
+                          ¥200,000
+                        </td>
+                        
+                       
+                        <td class="v-align-middle">
+                          2017/9/25
                         </td>
                       </tr>
                       <tr>
@@ -229,22 +249,27 @@
                           山田太郎
                         </td>
                         <td class="v-align-middle">
-                          2017/9
-                        </td>
-                        <td class="v-align-middle">
-                          ¥335,000
-                        </td>
-                        <td class="v-align-middle">
-                          ¥35,000
-                        </td>
-                        <td class="v-align-middle">
-                          ¥300,000 
-                        </td>
-                        <td class="v-align-middle">
                           2017/10/25
                         </td>
                         <td class="v-align-middle">
-                          123456
+                          300コイン
+                        </td>
+                        <td class="v-align-middle">
+                          ¥300,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥300
+                        </td>
+                        <td class="v-align-middle">
+                          ¥24
+                        </td>
+                        <td class="v-align-middle">
+                          ¥300,000
+                        </td>
+                        
+                        
+                        <td class="v-align-middle">
+                          2017/10/25
                         </td>
                       </tr>
                       <tr>
@@ -258,22 +283,27 @@
                           山田太郎
                         </td>
                         <td class="v-align-middle">
-                          2017/10
-                        </td>
-                        <td class="v-align-middle">
-                          ¥445,000
-                        </td>
-                        <td class="v-align-middle">
-                          ¥45,000
-                        </td>
-                        <td class="v-align-middle">
-                          ¥400,000 
-                        </td>
-                        <td class="v-align-middle">
                           2017/11/25
                         </td>
                         <td class="v-align-middle">
-                          123456
+                          400コイン
+                        </td>
+                        <td class="v-align-middle">
+                          ¥400,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥400
+                        </td>
+                        <td class="v-align-middle">
+                          ¥32
+                        </td>
+                        <td class="v-align-middle">
+                          ¥400,000
+                        </td>
+                        
+                        
+                        <td class="v-align-middle">
+                          2017/11/25
                         </td>
                       </tr>
                       <tr>
@@ -287,22 +317,28 @@
                           山田太郎
                         </td>
                         <td class="v-align-middle">
-                          2017/11
-                        </td>
-                        <td class="v-align-middle">
-                          ¥555,000
-                        </td>
-                        <td class="v-align-middle">
-                          ¥55,000
-                        </td>
-                        <td class="v-align-middle">
-                          ¥500.000 
-                        </td>
-                        <td class="v-align-middle">
                           2017/12/25
                         </td>
                         <td class="v-align-middle">
-                          123456
+                          500コイン
+                        </td>
+                        <td class="v-align-middle">
+                          ¥500,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥500
+                        </td>
+                        <td class="v-align-middle">
+                          ¥40
+                        </td>
+                        </td>
+                        <td class="v-align-middle">
+                          ¥500,000
+                        </td>
+                        
+                        
+                        <td class="v-align-middle">
+                          2017/12/25
                         </td>
                       </tr>
 
