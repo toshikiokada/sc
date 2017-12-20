@@ -17,6 +17,14 @@
 	<link href="../assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" media="screen" />
 	<link href="../assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen" />
 
+  <link href="../assets/plugins/bootstrap3-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/plugins/bootstrap-tag/bootstrap-tagsinput.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/plugins/dropzone/css/dropzone.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="../assets/plugins/summernote/css/summernote.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="../assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="../assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" media="screen">
+
   <link href="../pages/css/pages-icons.css" rel="stylesheet" type="text/css">
   <link class="main-stylesheet" href="../pages/css/themes/light.css" rel="stylesheet" type="text/css" />
   <link href="../assets/plugins/jquery-datatable/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -123,6 +131,8 @@
               <div class="card-header ">
                 <div class="card-title">未精算金額照会／精算処理画面
                 </div>
+                
+
                 <div class="pull-right">
                   <div class="row">
                   
@@ -149,10 +159,15 @@
                         Comman Practice Followed
                         -->
                         <th style="width:10%">加盟店コード</th>
-                        <th style="width:15%">加盟店名</th>
-                        <th style="width:15%">担当者名</th>
-                        <th style="width:15%">未精算金額</th>
-                        <th style="width:10%">
+                        <th style="width:10%">加盟店名</th>
+                        <th style="width:10%">担当者名</th>
+                        <th style="width:10%">利用金額</th>
+                        <th style="width:10%">売却後金額</th>
+                        <th style="width:9%">手数料</th>
+                        <th style="width:9%">消費税</th>
+                        <th style="width:10%">未精算金額</th>
+                        <th style="width:10%">精算年月日</th>
+                        <th style="width:12%">
                           精算済金額登録
                         </th>
                       </tr>
@@ -169,16 +184,22 @@
                           山田太郎
                         </td>
                         <td class="v-align-middle">
-                          2017/7
+                          100コイン
+                        </td>
+                        <td class="v-align-middle">
+                          ¥10,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥100
+                        </td>
+                        <td class="v-align-middle">
+                          ¥8
                         </td>
                         <td class="v-align-middle">
                           ¥10,000
                         </td>
                         <td class="v-align-middle">
                           2017/8/25
-                        </td>
-                        <td class="v-align-middle">
-                          123456
                         </td>
                         <td class="v-align-middle">
                           <button type="button" class="btn btn-default" id="btnToggleSlideUpSize"><i class="fa fa-edit"></i>
@@ -196,7 +217,16 @@
                           山田太郎
                         </td>
                         <td class="v-align-middle">
-                          2017/8
+                          200コイン
+                        </td>
+                        <td class="v-align-middle">
+                          ¥200,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥200
+                        </td>
+                        <td class="v-align-middle">
+                          ¥16
                         </td>
                         <td class="v-align-middle">
                           ¥200,000
@@ -204,9 +234,7 @@
                         <td class="v-align-middle">
                           2017/9/25
                         </td>
-                        <td class="v-align-middle">
-                          123456
-                        </td>
+                       
                         <td class="v-align-middle">
                           <button type="button" class="btn btn-default" id="btnToggleSlideUpSize"><i class="fa fa-edit"></i>
                             </button>
@@ -223,7 +251,16 @@
                           山田太郎
                         </td>
                         <td class="v-align-middle">
-                          2017/9
+                          300コイン
+                        </td>
+                        <td class="v-align-middle">
+                          ¥300,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥300
+                        </td>
+                        <td class="v-align-middle">
+                          ¥24
                         </td>
                         <td class="v-align-middle">
                           ¥300,000
@@ -231,9 +268,7 @@
                         <td class="v-align-middle">
                           2017/10/25
                         </td>
-                        <td class="v-align-middle">
-                          123456
-                        </td>
+                        
                         <td class="v-align-middle">
                           <button type="button" class="btn btn-default" id="btnToggleSlideUpSize"><i class="fa fa-edit"></i>
                             </button>
@@ -250,7 +285,16 @@
                           山田太郎
                         </td>
                         <td class="v-align-middle">
-                          2017/10
+                          400コイン
+                        </td>
+                        <td class="v-align-middle">
+                          ¥400,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥400
+                        </td>
+                        <td class="v-align-middle">
+                          ¥32
                         </td>
                         <td class="v-align-middle">
                           ¥400,000
@@ -258,9 +302,7 @@
                         <td class="v-align-middle">
                           2017/11/25
                         </td>
-                        <td class="v-align-middle">
-                          123456
-                        </td>
+                        
                         <td class="v-align-middle">
                           <button type="button" class="btn btn-default" id="btnToggleSlideUpSize"><i class="fa fa-edit"></i>
                             </button>
@@ -277,7 +319,17 @@
                           山田太郎
                         </td>
                         <td class="v-align-middle">
-                          2017/11
+                          500コイン
+                        </td>
+                        <td class="v-align-middle">
+                          ¥500,000
+                        </td>
+                        <td class="v-align-middle">
+                          ¥500
+                        </td>
+                        <td class="v-align-middle">
+                          ¥40
+                        </td>
                         </td>
                         <td class="v-align-middle">
                           ¥500,000
@@ -285,9 +337,7 @@
                         <td class="v-align-middle">
                           2017/12/25
                         </td>
-                        <td class="v-align-middle">
-                          123456
-                        </td>
+                        
                         <td class="v-align-middle">
                           <button type="button" class="btn btn-default" id="btnToggleSlideUpSize"><i class="fa fa-edit"></i>
                             </button>
@@ -316,19 +366,34 @@
                   </div>
                   <div class="modal-body">
                     <form role="form">
-
+                      <div class="row">
+                      <div class="col-md-6">
                       <div class="form-group form-group-default input-group">
                         <div class="form-input-group">
                           <label>精算済み金額</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" readonly="" placeholder="¥10,000">
                         </div>
                         <div class="input-group-addon">
                           円
                         </div>
                       </div>
+                      </div>
+                      <div class="col-md-6">
 
-                      
-                    </form>
+                      <div class="form-group form-group-default input-group">
+                      <div class="form-input-group">
+                        <label>精算年月日</label>
+                        <input type="email" class="form-control" placeholder="日時を選択" id="datepicker-component2">
+                      </div>
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                      </div>
+                      </div>
+
+                      </div>
+
+              
+                    </div>
                     <div class="row">
                       <div class="col-md-8">
                         <div class="p-t-20 clearfix p-l-10 p-r-10">
@@ -344,6 +409,7 @@
                         <button type="button" class="btn btn-primary btn-block m-t-5" data-target="#modalFillIn" data-toggle="modal" id="btnFillSizeToggler2">登録</button>
                       </div>
                     </div>
+                  </form>
                   </div>
                 </div>
               </div>
@@ -442,5 +508,8 @@
     <script src="../assets/js/demo.js" type="text/javascript"></script>
     <script src="../assets/js/scripts_alt.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS -->
+    <input type="file" multiple="multiple" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
+    <div id="pg-visible-sm" class="visible-sm"></div>
+    <div id="pg-visible-xs" class="visible-xs"></div>
   </body>
 </html>
