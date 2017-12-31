@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <title>オペレータ管理画面ログイン - Sコイン オペレータ管理画面</title>
+    <title>デベロッパーアカウント作成画面 - Sコイン デベロッパー管理画面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -29,75 +29,59 @@
     </script>
   </head>
   <body class="fixed-header menu-pin">
-    <div class="login-wrapper ">
-      <!-- START Login Background Pic Wrapper-->
-      <div class="bg-pic">
-        <!-- START Background Pic-->
-        <img src="../assets/img/demo/so_login_bg.jpg" data-src="../assets/img/demo/so_login_bg.jpg" data-src-retina="../assets/img/demo/so_login_bg.jpg" alt="" class="lazy">
-        <!-- END Background Pic-->
-        <!-- START Background Caption-->
-        <div class="bg-caption pull-bottom sm-pull-bottom text-white p-l-20 m-b-20">
-          <h2 class="semi-bold text-white">
-					Sコインオペレータ管理画面</h2>
-          <p class="small">
-            画面ID C001
-          </p>
-        </div>
-        <!-- END Background Caption-->
-      </div>
-      <!-- END Login Background Pic Wrapper-->
-      <!-- START Login Right Container-->
-      <div class="login-container bg-white">
-        <div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
-          <img src="../assets/img/s_logo.png" alt="s_logo" data-src="../assets/img/s_logo.png" data-src-retina="../assets/img/s_logo_2x.png" width="160" height="20">
-          <p class="p-t-35">オペレータ管理アカウントにサインイン</p>
-          <!-- START Login Form -->
-          <form id="form-login" class="p-t-15" role="form" action="index.html">
-            <!-- START Form Control-->
-            <div class="form-group form-group-default">
-              <label>ユーザーID</label>
-              <div class="controls">
-                <input type="text" name="username" placeholder="User Id" class="form-control" required>
+    <div class="register-container full-height sm-p-t-30">
+      <div class="d-flex justify-content-center flex-column full-height ">
+        <img src="../assets/img/s_logo.png" alt="s_logo" data-src="../assets/img/s_logo.png" data-src-retina="../assets/img/s_logo_2x.png" width="160" height="20">
+        <hr>
+        <h3>デベロッパーアカウント作成画面</h3>
+        <p>
+          Sコイン デベロッパー管理アカウント作成用</a>
+        </p>
+        <form id="form-register" class="p-t-15" role="form" action="index.html">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group form-group-default">
+                <label>姓</label>
+                <input type="text" name="fname" placeholder="苗字" class="form-control" required>
               </div>
             </div>
-            <!-- END Form Control-->
-            <!-- START Form Control-->
-            <div class="form-group form-group-default">
-              <label>パスワード</label>
-              <div class="controls">
-                <input type="password" class="form-control" name="password" placeholder="Password" required>
-              </div>
-            </div>
-            <!-- START Form Control-->
-            <div class="row">
-              <div class="col-md-6 no-padding sm-p-l-10">
-                <div class="checkbox ">
-                  <input type="checkbox" value="1" id="checkbox1">
-                  <label for="checkbox1">ログイン状態を保持</label>
-                </div>
-              </div>
-              
-            </div>
-            <!-- END Form Control-->
-            <button class="btn btn-primary btn-cons m-t-10" type="submit" onclick="location.href='transaction.html'">サインイン</button>
-          </form>
-          <!--END Login Form-->
-          <div class="pull-bottom sm-pull-bottom">
-            <div class="m-b-30 p-r-80 sm-m-t-20 sm-p-r-15 sm-p-b-20 clearfix">
-              <div class="col-sm-3 col-md-2 no-padding">
-                <img alt="" class="m-t-5" data-src="../assets/img/demo/s_pages_icon.png" data-src-retina="../assets/img/demo/s_pages_icon_2x.png" height="60" src="../assets/img/demo/s_pages_icon.png" width="60">
-              </div>
-              <div class="col-sm-9 no-padding m-t-10">
-                <p>
-                 
-                </p>
+            <div class="col-md-6">
+              <div class="form-group form-group-default">
+                <label>名</label>
+                <input type="text" name="lname" placeholder="名前" class="form-control" required>
               </div>
             </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group form-group-default">
+                <label>ユーザーID</label>
+                <input type="text" name="uname" placeholder="user id" class="form-control" required>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group form-group-default">
+                <label>パスワード</label>
+                <input type="password" name="pass" placeholder="4文字以上" class="form-control" required>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group form-group-default">
+                <label>メールアドレス</label>
+                <input type="email" name="email" placeholder="Email Address" class="form-control" required>
+              </div>
+            </div>
+          </div>
+          
+          <button class="btn btn-primary btn-cons m-t-10" type="submit">アカウント作成</button>
+        </form>
       </div>
-      <!-- END Login Right Container-->
     </div>
+    
     
     <!-- BEGIN VENDOR JS -->
     <script src="../assets/plugins/pace/pace.min.js" type="text/javascript"></script>
@@ -120,7 +104,7 @@
     <script>
     $(function()
     {
-      $('#form-login').validate()
+      $('#form-register').validate()
     })
     </script>
   </body>

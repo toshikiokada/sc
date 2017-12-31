@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <title>決済履歴一覧画面 - Sコイン オペレータ管理画面</title>
+    <title>CSV出力画面 - Sコイン デベロッパー管理画面</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
@@ -40,13 +40,13 @@
      <div class="sidebar-menu">
         <!-- BEGIN SIDEBAR MENU ITEMS-->
         <ul class="menu-items">
-           <li class="m-t-30 open active">
+           <li class="m-t-30 ">
             <a href="transaction.html">
               <span class="title">決済履歴</span>
             </a>
             <span class="icon-thumbnail "><i data-feather="list"></i></span>
           </li>
-          <li class="">
+          <li class="open active">
             <a href="export.html">
               <span class="title">CSV出力</span>
             </a>
@@ -108,21 +108,14 @@
                <!-- START card -->
             <div class="card card-transparent">
               <div class="card-header ">
-                <div class="card-title">取引履歴一覧画面
+                <div class="card-title">CSV出力画面
                 </div>
               <div class="clearfix"></div>
               <div class="card-block">
                   <div class="row">
-                  <div class="col-lg-4 m-t-10">
-
-                    <div id="datepicker-component" class="input-group date p-l-0 ">
-                      <div class="hint-text v-align-middle"><small>取引日時指定検索</small></div>　<input type="text" class="form-control"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                    </div>
-
-                  </div>
-                  <div class="col-lg-8 m-t-10">
+                  <div class="col-lg-6 m-t-10">
                     <div class="input-group date p-l-0">
-                      <form role="form" class="col-md-10">
+                      <form role="form" class="col-md-12">
                       <div class="form-group ">
                         <select class="full-width" data-init-plugin="select2">
                             <option >店舗名/店舗IDを選択</option>
@@ -135,7 +128,25 @@
                         </select>
                       </div>
                     </form>    
-                    <button class="col-md-2 btn btn-primary btn-cons m-b-10" type="button"><i class="fa fa-search"></i> 　検索</button>
+                    
+                    </div>
+                  </div>
+                  <div class="col-lg-6 m-t-10">
+                    <div class="input-group date p-l-0">
+                      <form role="form" class="col-md-7">
+                      <div class="form-group ">
+                        <select class="full-width" data-init-plugin="select2">
+                            <option >年月を選択</option>
+                            <option >2018-3</option>
+                            <option >2018-2</option>
+                            <option >2018-1</option>
+                         
+                          
+                        </select>
+                      </div>
+                    </form>    
+                   
+                    <button class="col-md-5 btn btn-info btn-cons m-b-10" type="button"><i class="fa fa-download"></i> 　CSVエクスポート</button>
                     </div>
                   </div>
 
@@ -147,173 +158,9 @@
                 
                 <div class="clearfix"></div>
              
-                <div class="table-responsive">
-                  <table class="table table-hover" id="basicTable">
-                    <thead>
-                      <tr>
-                        <!-- NOTE * : Inline Style Width For Table Cell is Required as it may differ from user to user
-                        Comman Practice Followed
-                        -->
-                        <th>トランザクションＩＤ（共通）</th>
-                        <th>取引日時</th>
-                        <th>ユーザーID</th>
-                        <th>決済金額（円）</th>
-                        <th>精算年月日</th>
-                        <th>性別</th>
-                        <th>生年</th>
-                        <th>居住地</th>
-                        
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="v-align-middle">
-                          abcd12345
-                        </td>
-                        <td class="v-align-middle ">
-                          2017/03/01 07:35
-                        </td>
-                        <td class="v-align-middle">
-                          U654321
-                        </td>
-                        <td class="v-align-middle">
-                          800
-                        </td>
-                        <td class="v-align-middle">
-                          2017/03/31
-                        </td>
-                        <td class="v-align-middle">
-                          男
-                        </td>
-                        <td class="v-align-middle">
-                          1987
-                        </td>
-                        <td class="v-align-middle">
-                          東京
-                        </td>
-                        
-                      </tr>
-                      <tr>
-                        <td class="v-align-middle">
-                          abcd12346
-                        </td>
-                        <td class="v-align-middle ">
-                          2017/03/01 07:48
-                        </td>
-                        <td class="v-align-middle">
-                          U654321
-                        </td>
-                        <td class="v-align-middle">
-                          900
-                        </td>
-                        <td class="v-align-middle">
-                          2017/03/31
-                        </td>
-                        <td class="v-align-middle">
-                          女
-                        </td>   
-                        <td class="v-align-middle">
-                          1987
-                        </td> 
-                        <td class="v-align-middle">
-                          東京
-                        </td>                    
-                      </tr>
-                      <tr>
-                        <td class="v-align-middle">
-                          abcd12347
-                        </td>
-                        <td class="v-align-middle ">
-                          2017/03/01 09:05
-                        </td>
-                        <td class="v-align-middle">
-                          U654321
-                        </td>
-                        <td class="v-align-middle">
-                          500
-                        </td>
-                        <td class="v-align-middle">
-                          2017/03/31
-                        </td>
-                        <td class="v-align-middle">
-                          男
-                        </td>
-                        <td class="v-align-middle">
-                          1975
-                        </td>
-                        <td class="v-align-middle">
-                          千葉
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="v-align-middle">
-                          abcd12348
-                        </td>
-                        <td class="v-align-middle ">
-                          2017/03/01 09:40
-                        </td>
-                        <td class="v-align-middle">
-                          U654321
-                        </td>
-                        <td class="v-align-middle">
-                          1,000
-                        </td>
-                        <td class="v-align-middle">
-                          2017/03/31
-                        </td>
-                        <td class="v-align-middle">
-                          女
-                        </td>
-                        <td class="v-align-middle">
-                          1980
-                        </td>
-                        <td class="v-align-middle">
-                          神奈川
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="v-align-middle">
-                          abcd12349
-                        </td>
-                        <td class="v-align-middle ">
-                          2017/03/01 12:35
-                        </td>
-                        <td class="v-align-middle">
-                          U654321
-                        </td>
-                        <td class="v-align-middle">
-                          1,200
-                        </td>
-                        <td class="v-align-middle">
-                          2017/03/31
-                        </td>
-                        <td class="v-align-middle">
-                          男
-                        </td>
-                        <td class="v-align-middle">
-                          1983
-                        </td>
-                        <td class="v-align-middle">
-                          東京
-                        </td>
-                      </tr>
+                
 
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="clearfix m-t-30"></div>
-
-                <div class="row">
-                      <div class="col-4 col-xl-3">
-                        <p class="no-margin">合計件数</p>
-                        <p class="hint-text"><span class="bold">6件</span></p>
-                      </div>
-                      <div class="col-8 col-xl-9 bg-info-dark text-white m-b-10">
-                        <p class="pull-left no-margin p-t-10 p-b-10 font-montserrat all-caps semi-bold ">合計金額</p>
-                        <p class="pull-right no-margin p-t-10 p-b-10 bold">4,400円</p>
-                      </div>
-                </div>
+               
 
               </div>
             </div>
@@ -339,7 +186,7 @@
                         </span>
             </p>
             <p class="small no-margin pull-right sm-pull-reset">
-              <span class="hint-text">画面ID C036</span>
+              <span class="hint-text">画面ID XXX</span>
             </p>
             <div class="clearfix"></div>
           </div>

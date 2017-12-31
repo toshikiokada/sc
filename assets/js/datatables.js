@@ -85,7 +85,7 @@
                 "sLengthMenu": "_MENU_ ",
                 "sInfo": "Showing <b>_START_ to _END_</b> of _TOTAL_ entries"
             },
-            "iDisplayLength": 7,
+            "iDisplayLength": 5,
             "oTableTools": {
                 "sSwfPath": "assets/plugins/jquery-datatable/extensions/TableTools/swf/copy_csv_xls_pdf.swf",
                 "aButtons": [{
@@ -97,27 +97,33 @@
                 }, {
                     "sExtends": "pdf",
                     "sButtonText": "<i class='fa fa-file-pdf-o'></i>",
+                }, {
+                    "sExtends": "copy",
+                    "sButtonText": "<i class='fa fa-copy'></i>",
                 }]
             },
             fnDrawCallback: function(oSettings) {
                 $('.export-options-container').append($('.exportOptions'));
 
                 $('#ToolTables_tableWithExportOptions_0').tooltip({
-                    title: 'CSVエクスポート',
+                    title: 'Export as CSV',
                     container: 'body'
                 });
 
                 $('#ToolTables_tableWithExportOptions_1').tooltip({
-                    title: 'Excelエクスポート',
+                    title: 'Export as Excel',
                     container: 'body'
                 });
 
                 $('#ToolTables_tableWithExportOptions_2').tooltip({
-                    title: 'PDFエクスポート',
+                    title: 'Export as PDF',
                     container: 'body'
                 });
 
-
+                $('#ToolTables_tableWithExportOptions_3').tooltip({
+                    title: 'Copy data',
+                    container: 'body'
+                });
             }
         };
 
